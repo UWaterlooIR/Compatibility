@@ -113,7 +113,7 @@ def main():
         if topic in ideal:
             ideal[topic] = idealize(run[topic], ideal[topic], qrels[topic])
 
-    print('runid', 'topic', 'compatibility', sep=',')
+    #print('runid', 'topic', 'compatibility', sep=',')
     count = 0
     total = 0.0
     for topic in run:
@@ -127,12 +127,13 @@ def main():
                     score = best
             count += 1
             total += score
-            print(runid, topic, score, sep=',')
+            #print(runid, topic, score, sep=',')
+            print('compatibility', topic, score, sep='\t')
 
     if count > 0:
-        print(runid, 'average', total/count, sep=',')
+        print('compatibility', 'all', total/count, sep='\t')
     else:
-        print(runid, 'average', 0.0, sep=',')
+        print('compatibility', 'all', 0.0, sep='\t')
 
 if __name__ == "__main__":
     main()
