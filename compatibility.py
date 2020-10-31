@@ -128,12 +128,12 @@ def main():
             count += 1
             total += score
             #print(runid, topic, score, sep=',')
-            print('compatibility', topic, score, sep='\t')
+            print('compatibility', topic, "{:.4f}".format(score), sep='\t')
 
     if count > 0:
-        print('compatibility', 'all', total/count, sep='\t')
+        print('compatibility', 'all', "{:.4f}".format(total/count), sep='\t')
     else:
-        print('compatibility', 'all', 0.0, sep='\t')
+        print('compatibility', 'all', "{:.4f}".format(0.0), sep='\t')
 
 if __name__ == "__main__":
     main()
